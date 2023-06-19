@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./main.css">
     <title>Main Page</title>
 </head>
-<body> <!--udhuhdu-->
+<body>
     <nav class="navbar fixed-top navbar-expand-lg">
         <a class="navbar-brand" href="#">Our Bike Hire Company</a> 
-        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> 
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
@@ -47,14 +47,138 @@
           </span>
         </div>
     </nav>
-    <img src="./cyclingImage.png" width="100%" height="1600px">
+    
+    <div id="howToHireCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#howToHireCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#howToHireCarousel" data-slide-to="1"></li>
+          <li data-target="#howToHireCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./cyclingImage.png" alt="Cyclist on bike">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./bikesToHire.PNG" alt="Image of our bikes">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./bikeHireCartoon.PNG" alt="Bike hire process">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#howToHireCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#howToHireCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!--can we use Java to determine what dropdown was selected and to give the relevant map, this will be on second page of the html, how do we link here?, can add .active to items in the dropdown to style them as active, can we use this for Java on the previous page? https://tutorialdeep.com/knowhow/change-image-on-dropdown-select-option-jquery/ 
+      <h2>Location</h2>
+      <div class="dropdown" id="locationDropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Location
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">London</a>
+          <a class="dropdown-item" href="#">Manchester</a>
+          <a class="dropdown-item" href="#">Liverpool</a>
+          <a class="dropdown-item" href="#">Hull</a>
+        </div>
+      </div>
+      <table align="center" width="50%" cellpadding="8" cellspacing="8">
+        <tr>
+          <td>
+            <select id = "City" onchange="showMap()" style="width:30%">
+              <option value="valueLondon">London</option>
+              <option value="valueManchester">Manchester</option>
+              <option value="valueLiverpool">Liverpool</option>
+              <option value="valueHull">Hull</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6457864877602!2d-0.14446492297901137!3d51.501367311143376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760520cd5b5eb5%3A0xa26abf514d902a7!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1686858937700!5m2!1sen!2suk" id="LondonMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9501.941859978406!2d-2.2880239683638566!3d53.45978348281713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bade198f6a2ab%3A0xa06b7a1e162e18f9!2sOld%20Trafford%2C%20Stretford%2C%20Manchester!5e0!3m2!1sen!2suk!4v1687087551840!5m2!1sen!2suk" id="ManchesterMap"width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.1046852618474!2d-2.963386322892212!3d53.43083646839782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b21654b02538b%3A0x84576a57e21973ff!2sAnfield!5e0!3m2!1sen!2suk!4v1687087582332!5m2!1sen!2suk" id="LiverpoolMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.5272598644897!2d-0.3504407056744385!3d53.74449397371943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4878be2f668a2757%3A0xfb87428627ebc616!2sHull!5e0!3m2!1sen!2suk!4v1687087630947!5m2!1sen!2suk" id="HullMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </td>
+        </tr>
+      </table>
+
+      find a way to hide this until the location is selected
+      <h2>Bike Selection</h2>
+      <div id="bikePicker" class="carousel slide" data-interval="false">
+        <h2 align="center">Bike Selection</h2>
+        <ol class="carousel-indicators">
+          <li data-target="#bikePicker" data-slide-to="0" class="active"></li>
+          <li data-target="#bikePicker" data-slide-to="1"></li>
+          <li data-target="#bikePicker" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./womens.png" class="d-block w-50" id="bikeSelectCarousel" alt="Womens Bike">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Rockrider Womens Mountain Bike</h5>
+              <p> - Flex seat post </p>
+              <p> - Light aluminium frame</p>
+              <p> £10 per day hire</p>
+              <button class="stretched-link">Hire Me</button>
+            </div>
+            
+          </div>
+          <div class="carousel-item">
+            <img src="./mountainBike.PNG" class="d-block w-50" id="bikeSelectCarousel" alt="Mountain Bike">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Rockrider Mountain Bike</h5>
+              <P>- 9 gear speeds </P>
+              <p>- Suitable for short bike rides in all weathers </p>
+              <p> £10 per day hire</p>
+              <button>Hire Me</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./kidsBike.png" class="d-block w-50" id="bikeSelectCarousel" alt="Childs Bike">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Kids Mountain Bike</h5>
+              <p> - Suitable for ages 9-12</p>
+              <p> - Low frame for ease of use</p>
+              <p> £6 per day hire</p>
+              <button>Hire Me</button>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#bikePicker" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bikePicker" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> -->
+
     <footer class="bg-light">
         <script src="./script.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<h1>Hello Mel</h1>
     </footer>
 </body>
 </html>
