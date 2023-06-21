@@ -11,22 +11,64 @@
 <body>
 
     <!--can we use Java to determine what dropdown was selected and to give the relevant map, this will be on second page of the html, how do we link here?, can add .active to items in the dropdown to style them as active, can we use this for Java on the previous page? https://tutorialdeep.com/knowhow/change-image-on-dropdown-select-option-jquery/ -->
-    <h2>Location</h2>
+    <main class="d-flex flex-nowrap">
+        <!--<h1 class="visually-hidden">Sidebars examples</h1>-->
+    
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; background-color:#219EBC;">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Logo</span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="#" style="background-color: #FB8500;" class="nav-link active" aria-current="page">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                My bookings
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Notifications
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                Messages
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                Profile
+              </a>
+            </li>
+    
+          </ul>
+          <div class="mt-auto">
+            <hr>
+            <div class="d-flex align-items-center text-white">
+              <svg class="bi me-2" width="24" height="24" role="img" aria-label="Profile"><use xlink:href="#person"></use></svg>
+              <div>
+                <p class="mb-0">Jane Doe</p>
+                <a href="#" class="text-white">Settings</a> |
+                <a href="#" class="text-white">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div class="container py-5">  
     <div class="dropdown" id="locationDropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select Location
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">London</a>
-        <a class="dropdown-item" href="#">Manchester</a>
-        <a class="dropdown-item" href="#">Liverpool</a>
-        <a class="dropdown-item" href="#">Hull</a>
-      </div>
+        <h2 align="center">Location</h2>
     </div>
     <table align="center" width="50%" cellpadding="8" cellspacing="8">
       <tr>
         <td>
           <select id = "City" onchange="showMap()" style="width:30%">
+            <option value="valueSelect">Select Location</option>
             <option value="valueLondon">London</option>
             <option value="valueManchester">Manchester</option>
             <option value="valueLiverpool">Liverpool</option>
@@ -36,29 +78,27 @@
       </tr>
       <tr>
         <td>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6457864877602!2d-0.14446492297901137!3d51.501367311143376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760520cd5b5eb5%3A0xa26abf514d902a7!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1686858937700!5m2!1sen!2suk" id="LondonMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6457864877602!2d-0.14446492297901137!3d51.501367311143376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760520cd5b5eb5%3A0xa26abf514d902a7!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1686858937700!5m2!1sen!2suk" id="LondonMap" width="600" height="450" style="border:0; display:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </td>
       </tr>
       
       <tr>
         <td>  
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9501.941859978406!2d-2.2880239683638566!3d53.45978348281713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bade198f6a2ab%3A0xa06b7a1e162e18f9!2sOld%20Trafford%2C%20Stretford%2C%20Manchester!5e0!3m2!1sen!2suk!4v1687087551840!5m2!1sen!2suk" id="ManchesterMap"width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9501.941859978406!2d-2.2880239683638566!3d53.45978348281713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bade198f6a2ab%3A0xa06b7a1e162e18f9!2sOld%20Trafford%2C%20Stretford%2C%20Manchester!5e0!3m2!1sen!2suk!4v1687087551840!5m2!1sen!2suk" id="ManchesterMap"width="600" height="450" style="border:0; display:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </td>
       </tr>
       <tr>
         <td>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.1046852618474!2d-2.963386322892212!3d53.43083646839782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b21654b02538b%3A0x84576a57e21973ff!2sAnfield!5e0!3m2!1sen!2suk!4v1687087582332!5m2!1sen!2suk" id="LiverpoolMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.1046852618474!2d-2.963386322892212!3d53.43083646839782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b21654b02538b%3A0x84576a57e21973ff!2sAnfield!5e0!3m2!1sen!2suk!4v1687087582332!5m2!1sen!2suk" id="LiverpoolMap" width="600" height="450" style="border:0; display:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </td>
       </tr>
       <tr>
         <td>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.5272598644897!2d-0.3504407056744385!3d53.74449397371943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4878be2f668a2757%3A0xfb87428627ebc616!2sHull!5e0!3m2!1sen!2suk!4v1687087630947!5m2!1sen!2suk" id="HullMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2359.5272598644897!2d-0.3504407056744385!3d53.74449397371943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4878be2f668a2757%3A0xfb87428627ebc616!2sHull!5e0!3m2!1sen!2suk!4v1687087630947!5m2!1sen!2suk" id="HullMap" width="600" height="450" style="border:0; display:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </td>
       </tr>
     </table>
-    
-    <!-- find a way to hide this until the location is selected-->
-    <h2>Bike Selection</h2>
+   
     <div id="bikePicker" class="carousel slide" data-interval="false">
       <h2 align="center">Bike Selection</h2>
       <ol class="carousel-indicators">
@@ -85,7 +125,7 @@
             <P>- 9 gear speeds </P>
             <p>- Suitable for short bike rides in all weathers </p>
             <p> £10 per day hire</p>
-            <button>Hire Me</button>
+            <button class="stretched-link">Hire Me</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -95,7 +135,7 @@
             <p> - Suitable for ages 9-12</p>
             <p> - Low frame for ease of use</p>
             <p> £6 per day hire</p>
-            <button>Hire Me</button>
+            <button class="stretched-link">Hire Me</button>
           </div>
         </div>
       </div>
@@ -107,9 +147,14 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
     </div>    
 
-    <footer class="bg-light">
+    
+
+
+
+    <footer>   
         <script src="./script.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
