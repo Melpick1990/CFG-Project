@@ -18,7 +18,7 @@ function showMap(){
     if (city == 'valueLondon')
     {
        document.getElementById('LondonMap').style.display='block'
-       document.getElementById('LiverpoolMap', 'HullMap', 'ManchesterMap'.style.display='none'
+       document.getElementById('LiverpoolMap', 'HullMap', 'ManchesterMap').style.display='none'
     }
     else if (city == 'valueManchester')
     {
@@ -42,3 +42,4 @@ function showMap(){
     $("#howToHireCarousel").carousel({
        interval: 300, pause: "hover"
     });
+ 
